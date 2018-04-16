@@ -2,7 +2,8 @@
 FROM telemark/docker-node-unoconv:8.9.4
 
 # Clone the repo
-RUN git clone https://github.com/zrrrzzt/tfk-api-unoconv.git unoconvservice
+ADD https://api.github.com/repos/iDisclose/tfk-api-unoconv/git/refs/heads/master version.json
+RUN git clone -bmaster https://github.com/iDisclose/tfk-api-unoconv.git unoconvservice
 
 # Change working directory
 WORKDIR /unoconvservice
@@ -20,4 +21,5 @@ ENV TIMEOUT_SOCKET 140000
 EXPOSE 3000
 
 # Startup
-ENTRYPOINT /usr/bin/unoconv --listener --server=0.0.0.0 --port=2002 & node standalone.js
+ENTRYPOINT ["node"]
+CMD ["standalone.js"]

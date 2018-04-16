@@ -1,3 +1,7 @@
+# iDisclose fork of docker-unoconv-webservice
+
+The underlying changes required for iDisclose (i.e. make this service run on Heroku) are in tfk-api-unoconv. This fork exists just to provide a version of docker-unoconv-webservice that uses the iDisclose fork of tfk-api-unoconv.
+
 # docker-unoconv-webservice
 
 Dockerimage to run unoconv as a webservice through [tfk-api-unoconv](https://github.com/zrrrzzt/tfk-api-unoconv).
